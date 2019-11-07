@@ -149,6 +149,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-centos7系统启动时一直停留在开机界面的问题解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/centos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">centos7系统启动时一直停留在开机界面的问题解决</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/07/centos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
+  	<time datetime="2019-11-07T02:43:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>在安装完CentOS7之后，由于需要开机自启动一些软件，于是修改了系统中配置文件</p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5Ccentos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%5CSnipaste_2019-11-07_10-53-44.png" alt="Snipaste_2019-11-07_10-53-44"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5Ccentos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%5CSnipaste_2019-11-07_10-49-41.png" alt="Snipaste_2019-11-07_10-49-41"></p>
+<p>这就是我第二天再次开启时出现下面故障的原因</p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5Ccentos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%5CSnipaste_2019-11-07_10-55-21.png" alt="Snipaste_2019-11-07_10-55-21"></p>
+<p>尝试了很多方法，重装系统可以成功解决该问题，缺点就是之前下载的软件配置的文件全部消失，需要再次下载并配置。  </p>
+<p>于是思考其他解决方案，想到可以在进入加载系统配置文件之前，将开机自启动的配置文件修改为原状。接着查找找到了解决方案。</p>
+<p>在开机界面按<code>“e”键</code>进入<img src="/.com//E:%5Cblog%5Csource_posts%5Ccentos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%5CSnipaste_2019-11-07_11-06-46.png" alt="Snipaste_2019-11-07_11-06-46"></p>
+<p>在画线段落<strong><em>找到ro将其改为rw ，添加<code>init=/sysroot/bin/sh</code>,到末尾</em></strong></p>
+<p>添加完毕按Ctrl+x启动系统，执行<code>chroot /sysroot</code>,获取root权限</p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5Ccentos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%5CSnipaste_2019-11-07_11-10-18.png" alt="Snipaste_2019-11-07_11-10-18"></p>
+<p>最后修改<code>/etc/rc.d/rc.local</code> 中配置的开机自启动文件，重启系统即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/07/centos7%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%97%B6%E4%B8%80%E7%9B%B4%E5%81%9C%E7%95%99%E5%9C%A8%E5%BC%80%E6%9C%BA%E7%95%8C%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
