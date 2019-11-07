@@ -6,30 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结 | Hexo</title>
+  <title>使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结 | beautifuluo&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;05&#x2F;%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93&#x2F;index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="beautifuluo&#39;s blog">
 <meta property="og:description" content="使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-22-01.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-26-16.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-29-52.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-49-11.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-14-30.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-15-44.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-16-32.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-04-12.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-06-32.png">
-<meta property="og:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-12-08.png">
-<meta property="og:updated_time" content="2019-11-06T14:17:49.701Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-22-01.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-26-16.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-29-52.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-49-11.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-14-30.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-15-44.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-16-32.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-04-12.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-06-32.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-12-08.png">
+<meta property="og:updated_time" content="2019-11-07T01:42:16.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-22-01.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-22-01.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="beautifuluo&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -185,30 +185,29 @@
         <h1 id="使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结"><a href="#使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结" class="headerlink" title="使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结"></a>使用VMware15软件在centOS7环境下安装fastDFS可能出现的问题总结</h1><a id="more"></a>
 
 <h2 id="1-网络问题"><a href="#1-网络问题" class="headerlink" title="1. 网络问题"></a>1. 网络问题</h2><h3 id="1-1-在安装完centOS7系统后发现无法联网"><a href="#1-1-在安装完centOS7系统后发现无法联网" class="headerlink" title="1.1 在安装完centOS7系统后发现无法联网"></a>1.1 在安装完centOS7系统后发现无法联网</h3><ol>
-<li><p>检查物理机网络适配器中是否下载了vmnet1和vmnet8</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-22-01.png" alt="Snipaste_2019-11-06_09-22-01"></p>
+<li><p>检查物理机网络适配器中是否下载了vmnet1和vmnet8<img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-22-01.png" alt="Snipaste_2019-11-06_09-22-01"></p>
 <p>如果没有，可能是你之前下载过vmware，没有卸载干净导致再次下载没有自动下载。</p>
 <p>解决方法是，先去系统盘中删除vmware文件夹</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-26-16.png" alt="Snipaste_2019-11-06_09-26-16"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-26-16.png" alt="Snipaste_2019-11-06_09-26-16"></p>
 <p>删除时可能会提示你正在使用无法删除，此时win+R输入services.msc打开服务，关闭其中VM开头的服务即可</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-29-52.png" alt="Snipaste_2019-11-06_09-29-52"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-29-52.png" alt="Snipaste_2019-11-06_09-29-52"></p>
 <p>删除完后自行百度下载CCleaner</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_09-49-11.png" alt="Snipaste_2019-11-06_09-49-11"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_09-49-11.png" alt="Snipaste_2019-11-06_09-49-11"></p>
 <p>修复完之后，重新下载VMware即可。</p>
 </li>
 <li><p>查看系统中网络是否开启</p>
 </li>
 </ol>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-14-30.png" alt="Snipaste_2019-11-05_22-14-30"></p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-15-44.png" alt="Snipaste_2019-11-05_22-15-44"></p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-05_22-16-32.png" alt="Snipaste_2019-11-05_22-15-44"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-14-30.png" alt="Snipaste_2019-11-05_22-14-30"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-15-44.png" alt="Snipaste_2019-11-05_22-15-44"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-05_22-16-32.png" alt="Snipaste_2019-11-05_22-15-44"></p>
 <h3 id="1-2-使用java连接fastDFS时出现连接超时"><a href="#1-2-使用java连接fastDFS时出现连接超时" class="headerlink" title="1.2 使用java连接fastDFS时出现连接超时"></a>1.2 使用java连接fastDFS时出现连接超时</h3><ol>
 <li><p>设置虚拟机IP </p>
 <p>更改vmnet8网卡网段</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-04-12.png" alt="Snipaste_2019-11-06_10-04-12"></p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-06-32.png" alt="Snipaste_2019-11-06_10-06-32"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-04-12.png" alt="Snipaste_2019-11-06_10-04-12"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-06-32.png" alt="Snipaste_2019-11-06_10-06-32"></p>
 <p>修改虚拟机网络设置</p>
-<p><img src="C:%5CUsers%5C13215%5CDesktop%5CSnipaste_2019-11-06_10-12-08.png" alt="Snipaste_2019-11-06_10-12-08"></p>
+<p><img src="/.com//E:%5Cblog%5Csource_posts%5C%E4%BD%BF%E7%94%A8VMware15%E8%BD%AF%E4%BB%B6%E5%9C%A8centOS7%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85fastDFS%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%5CSnipaste_2019-11-06_10-12-08.png" alt="Snipaste_2019-11-06_10-12-08"></p>
 </li>
 <li><p>检查虚拟机防火墙是否关闭</p>
 <p>打开XShell连接虚拟机</p>
